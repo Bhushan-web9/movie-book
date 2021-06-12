@@ -142,10 +142,17 @@ const Home = () => {
                  <GridList  cols={4} >
                  {tileData.map((data) => (
                          <GridListTile key={data.id} style={{height:"350px", margin:"16px", width:"220px"}}> 
+                         
+                         <Link to={{
+                           pathname: "/details",
+                           data:{data},
+                         }}>
                          <img
                              style={{height:"350px", width:"220px"}}
                              src={data.poster_url} alt={data.title}
                          />
+                         </Link>
+
                          <GridListTileBar
                              title={data.title}
                              subtitle={<span>Release Date:
